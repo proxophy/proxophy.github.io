@@ -1,0 +1,18 @@
+baseURL: https://proxophy.github.io/
+languageCode: en-us
+title: proxophy
+theme: hugo-PaperMod
+caches:
+  images:
+    dir: :cacheDir/images
+
+params:
+  homeInfoParams:
+    Title: Isa's blog
+    Content: tba
+
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/proxophy"
+
+  ShowCodeCopyButtons: true
