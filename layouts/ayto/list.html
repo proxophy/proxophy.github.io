@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article>
+  <header class="page-header"><h1>{{ .Title }}</h1></header>
+
+  <div id="ayto-plot" data-src="{{ "data/probs_vip2024_4.json" | relURL }}"></div>
+
+  {{ with resources.Get "ts/ayto.ts" }}
+    {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}
+    {{ with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{ end }}
+    {{ else }}
+  {{ errorf "assets/ts/ayto.ts not found" }}
+  {{ end }}
+</article>
+{{ end }}
