@@ -1,4 +1,3 @@
 ---
 title: "Ayto"
-menu: main
 ---

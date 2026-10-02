@@ -1,0 +1,6 @@
+---
+title: "Normalo 2024"
+weight: 1
+---
+
+10 Männer und 12 Frauen, ein Tripplematch mit Mela

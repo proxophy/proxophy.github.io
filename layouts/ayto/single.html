@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article>
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+    </header>
+
+    {{.Content}}
+
+    <div class="slidecontainer">
+        <p>Woche: <span id="slider-value"></span> </p>
+        <input type="range" class="slider"   id="week-slider">
+    </div>
+
+    <div>Anzahl der Lösungen: <span id="num-sols"></span></div>
+
+    <div id="ayto-plot" data-src="{{ printf "ayto/%s.json" .File.ContentBaseName | relURL }}"></div>
+
+    {{ with resources.Get "ts/ayto.ts" }}
+    {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}
+    {{ with . | js.Build $opts | fingerprint }}
+    <script src="{{ .RelPermalink }}" defer></script>
+    {{ end }}
+    {{ else }}
+    {{ errorf "assets/ts/ayto.ts not found" }}
+    {{ end }}
+</article>
+{{ end }}
