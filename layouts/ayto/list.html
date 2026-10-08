@@ -1,9 +1,21 @@
 {{ define "main" }}
 <header class="page-header"><h1>{{ .Title }}</h1></header>
-{{.Content}}
-<ul>
-  {{ range .Pages.ByWeight }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-  {{ end }}
-</ul>
+{{ .Content }}
+
+{{ range .Pages.ByWeight.GroupByParam "show" }}
+  <h2 class="ayto-group">{{ .Key }}</h2>
+  <div class="ayto-seasons">
+    {{ range .Pages }}
+      <article class="post-entry">
+        <header class="entry-header">
+          <h3>{{ .Title }}</h3>
+        </header>
+        {{ with .Description }}
+          <div class="entry-content"><p>{{ . }}</p></div>
+        {{ end }}
+        <a class="entry-link" aria-label="{{ .Title | plainify }}" href="{{ .RelPermalink }}"></a>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}
 {{ end }}

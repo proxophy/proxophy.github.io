@@ -1,5 +1,5 @@
 baseURL: https://proxophy.github.io/
-locale: en-us
+locale: de
 title: proxophy
 theme: hugo-PaperMod
 caches:
@@ -17,13 +17,21 @@ params:
 
   ShowCodeCopyButtons: true
 
-  mainSections: ["posts"]
+  mainSections: ["posts", "ayto"]
+
+  description: "Perfect Matches für AYTO."
+  analytics:
+    google:
+      SiteVerificationTag: "FFVOui1EI8zatidEL2-I92bCjPR0lCBhdr9OqR4bIGs"
 
   assets:
     favicon: "favicon.ico"
     favicon16x16: "favicon-16x16.png"
     favicon32x32: "favicon-32x32.png"
     apple_touch_icon: "apple-touch-icon.png"
+
+   
+  enableRobotsTXT: true
 
 menu:
   main:
@@ -32,3 +40,4 @@ menu:
 
     - name: AYTO
       pageRef: /ayto
+

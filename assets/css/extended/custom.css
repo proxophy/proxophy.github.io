@@ -19,3 +19,26 @@
   border-radius: var(--radius);
   padding: 0.3rem 0.6rem;
 }
+.ayto-seasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0 var(--gap);
+}
+
+.ayto-seasons .post-entry {
+  padding: var(--gap);
+}
+
+.ayto-seasons .entry-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.ayto-seasons .entry-content {
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.ayto-group {
+  margin: 2rem 0 1rem;
+}
