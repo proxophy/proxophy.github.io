@@ -6,14 +6,15 @@
 
     {{.Content}}
 
-    <div class="slidecontainer">
+    <div class="ayto-controls">
         <p>Woche: <span id="slider-value"></span> </p>
-        <input type="range" class="slider"   id="week-slider">
+        <input type="range"  id="week-slider">
     </div>
 
     <div>Anzahl der Lösungen: <span id="num-sols"></span></div>
 
-    <div id="ayto-plot" data-src="{{ printf "ayto/%s.json" .File.ContentBaseName | relURL }}"></div>
+    <div id="probs-plot" data-src="{{ printf "ayto/probs/%s.json" .File.ContentBaseName | relURL }}"></div>
+    <div id="night-plot" data-src="{{ printf "ayto/probs/%s.json" .File.ContentBaseName | relURL }}"></div>
 
     {{ with resources.Get "ts/ayto.ts" }}
     {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}

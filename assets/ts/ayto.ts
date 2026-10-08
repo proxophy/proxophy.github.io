@@ -10,7 +10,7 @@ type Season = { episodes: Record<string, Episode> };
 
 function isDark(): boolean { return document.documentElement.dataset.theme === "dark"; }
 
-function trace(t: SplitTable): Plotly.Data {
+function probsPlot_Data(t: SplitTable): Plotly.Data {
   const eps = 0.0001;
   const colorscales: Record<"light" | "dark", [number, string][]> = {
     light: [
@@ -47,7 +47,8 @@ function trace(t: SplitTable): Plotly.Data {
 
 function layout(): Partial<Plotly.Layout> {
   return {
-    height: 520,
+    height: 600,
+    width: 800,
     margin: { t: 20, l: 20, r: 20, b: 20 },
     xaxis: { side: "top", automargin: true },
     yaxis: { autorange: "reversed", automargin: true },
@@ -58,17 +59,20 @@ function layout(): Partial<Plotly.Layout> {
 }
 
 async function main(): Promise<void> {
-  const el = document.getElementById("ayto-plot")!;
+  const probsPlot = document.getElementById("probs-plot")!;
   const slider = document.getElementById("week-slider") as HTMLInputElement;
   const sliderValue = document.getElementById("slider-value") as HTMLSpanElement;
   const numSols = document.getElementById("num-sols") as HTMLSpanElement;
+  const nightPlot = document.getElementById("night-plot") as HTMLDivElement;
   console.log(slider);
 
 
-  const season: Season = await (await fetch(el.dataset.src!)).json();
+  const season: Season = await (await fetch(probsPlot.dataset.src!)).json();
 
   const episodes = Object.keys(season.episodes).sort((a, b) => Number(a) - Number(b));
   const episode_numbers = episodes.map(Number);
+
+  const reader = new FileReader();
 
   // set slider
   slider.min = Math.min(...episode_numbers).toString();
@@ -82,7 +86,7 @@ async function main(): Promise<void> {
 
   const draw = () => {
     sliderValue.textContent = slider.value;
-    Plotly.react(el, [trace(season.episodes[slider.value].probs)], layout(), { responsive: true, displayModeBar: false });
+    Plotly.react(probsPlot, [probsPlot_Data(season.episodes[slider.value].probs)], layout(), { responsive: true, displayModeBar: false });
     numSols.textContent = season.episodes[slider.value].num_sols.toLocaleString("de-DE");
   };
 

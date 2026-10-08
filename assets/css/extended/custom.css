@@ -1,0 +1,21 @@
+.ayto-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  color: var(--primary);
+}
+
+.ayto-controls input[type="range"] {
+  flex: 1;
+  max-width: 400px;
+  accent-color: #e8457f;   /* same pink as your heatmap */
+}
+
+.ayto-controls select {
+  background: var(--entry);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.6rem;
+}

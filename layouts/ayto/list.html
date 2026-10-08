@@ -1,5 +1,6 @@
 {{ define "main" }}
 <header class="page-header"><h1>{{ .Title }}</h1></header>
+{{.Content}}
 <ul>
   {{ range .Pages.ByWeight }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
