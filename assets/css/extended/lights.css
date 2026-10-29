@@ -1,0 +1,41 @@
+.nights-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.nights-table th,
+.nights-table td {
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+
+/* header */
+.nights-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--entry);
+  border-bottom: 2px solid var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* subtle zebra striping + hover */
+/* .nights-table tbody tr:nth-child(even) { background: var(--code-bg); } */
+.nights-table tbody tr:hover { background: var(--border); }
+
+/* lights column: centered, separated from the names */
+.nights-table th.lights,
+.nights-table td.lights {
+  text-align: center;
+  font-weight: 600;
+  border-left: 2px solid var(--border);
+}
+.nights-table th.indices, .nights-table   td.indices {
+  text-align: center;
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+}

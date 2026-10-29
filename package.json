@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "papaparse": "^5.7.0",
     "plotly.js-dist-min": "^4.1.1"
   },
   "devDependencies": {
+    "@types/papaparse": "^5.5.2",
     "@types/plotly.js-dist-min": "^2.3.4",
     "typescript": "^7.0.2"
   }
