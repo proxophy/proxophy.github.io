@@ -1,0 +1,55 @@
+#ayto-table {
+  overflow-x: auto;
+}
+
+.ayto-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ayto-table th,
+.ayto-table td {
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  /* box-shadow: inset 0 0 0 1px var(--theme); */
+}
+
+.ayto-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--entry);
+  border-bottom: 2px solid var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ayto-table tbody tr:hover {
+  background: var(--border);
+}
+
+/* first column (night number) */
+.ayto-table th:first-child,
+.ayto-table td:first-child {
+  text-align: center;
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+}
+
+.ayto-table th:last-child,
+.ayto-table td:last-child {
+  text-align: center;
+  font-weight: 600;
+  border-left: 2px solid var(--border);
+}
+
+/* last column (lights) */
+/* .ayto-table th.lights,
+.ayto-table td.lights {
+  text-align: center;
+  font-weight: 600;
+  border-left: 1px solid var(--border);
+} */

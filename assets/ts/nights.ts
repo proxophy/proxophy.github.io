@@ -49,17 +49,20 @@ export async function renderNights(el: HTMLElement): Promise<NightsTable | null>
 
     const headRow = table.createTHead().insertRow();
     const index_th = document.createElement("th");
-    index_th.textContent = "Night";
+    index_th.textContent = "Nacht";
     index_th.classList.add("indices");
     headRow.appendChild(index_th);
     header.forEach((h, j) => {
         const th = document.createElement("th");
         th.textContent = h;
-        if (j === header.length - 1) th.classList.add("lights");
+        if (j === header.length - 1) {
+            th.textContent = "Lichter";
+            th.classList.add("lights");
+        }
         headRow.appendChild(th);
     });
 
-    const cells: { td: HTMLTableCellElement;  pair: boolean }[] = [];
+    const cells: { td: HTMLTableCellElement; pair: boolean }[] = [];
     const tbody = table.createTBody();
     body.forEach((r, i) => {
         const tr = tbody.insertRow();
@@ -76,7 +79,10 @@ export async function renderNights(el: HTMLElement): Promise<NightsTable | null>
 
     el.replaceChildren(table);
 
-    const update = (_week: number) => cells.forEach((c) => styleCell(c.td, c.pair));
+
+    const update = (week: number) => { 
+        cells.forEach((c) => styleCell(c.td, c.pair)); 
+    }
     update(0);
     return { update };
 }

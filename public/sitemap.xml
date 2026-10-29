@@ -2,9 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ayto/</loc>
+    <loc>http://localhost:1313/ayto/normalo2020/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2021/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2021/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2022/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2022/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2023/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2023/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2024/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2024/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/vip2026/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/normalo2026/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ayto/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
   </url><url>

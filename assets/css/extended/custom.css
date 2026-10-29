@@ -1,28 +1,23 @@
-:root { --main-width: 900px; 
---main-pink: #e8457f;
---light-pink: #f7a1c4;}
-
-.ayto-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
-  color: var(--primary);
+/* ============================================================
+   Variables
+   ============================================================ */
+:root {
+  --main-pink: #e8457f;
+  --light-pink: #f7a1c4;
 }
 
-.ayto-controls input[type="range"] {
-  flex: 1;
-  max-width: 400px;
-  accent-color: var(--main-pink);   /* same pink as your heatmap */
+/* Wider content column, but only on pages that contain the probs plot */
+:root:has(#probs-plot) {
+  --main-width: 1000px;
 }
 
-.ayto-controls select {
-  background: var(--entry);
-  color: var(--primary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.3rem 0.6rem;
+/* ============================================================
+   AYTO overview page (season list)
+   ============================================================ */
+.ayto-group {
+  margin: 2rem 0 1rem;
 }
+
 .ayto-seasons {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -43,7 +38,37 @@
   margin: 6px 0 0;
 }
 
-.ayto-group {
-  margin: 2rem 0 1rem;
+/* ============================================================
+   AYTO season page: controls and headings
+   ============================================================ */
+.ayto-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 1rem;
+  color: var(--primary);
 }
 
+.ayto-controls input[type="range"] {
+  flex: 1;
+  min-width: 180px;
+  accent-color: var(--secondary);
+}
+
+.ayto-controls select {
+  background: var(--entry);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.6rem;
+}
+
+.ayto-heading {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem;
+}
+
+#probs-plot {
+  overflow-x: auto; /* the plot has a fixed pixel width, so scroll on narrow screens */
+}

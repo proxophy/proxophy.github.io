@@ -1,0 +1,13 @@
+episode,Mann,Frau,result
+0,Paulo,Jana,False
+1,Ryan,Lina,False
+2,Kevin,Maja,False
+2,Eti,Mela,False
+3,Wilson,Shelly,True
+3,Gerrit,Tais,True
+3,Gerrit,Mela,True
+4,Gerrit,Pia,True
+5,Sandro,Sina,False
+6,Paulo,Julia,False
+7,Sandro,Afra,False
+8,Kevin,Lina,True

@@ -1,6 +1,7 @@
 import Plotly from "plotly.js-dist-min";
 import { renderNights, NightsTable } from "./nights";
 import { colorscales, isDark } from "./colors";
+import { renderMatchBoxes } from "./matchboxes";
 
 type SplitTable = { columns: string[]; index: string[]; data: number[][] };
 type Episode = {
@@ -13,31 +14,55 @@ type Season = { episodes: Record<string, Episode> };
 
 function probsPlot_Data(t: SplitTable): Plotly.Data {
   const eps = 0.0001;
+  const text = t.data.map((row) =>
+    row.map((v) => (v === 0 ? "" : v === 100 ? "100" : v.toFixed(1))),
+  );
+
 
   return {
     type: "heatmap",
     x: t.columns,
     y: t.index,
     z: t.data,
+    text,
+    texttemplate: "%{text}",
+    textfont: { size: 12 },
+    xgap: 2,
+    ygap: 2,
+    showscale: false,
     zmin: 0,
     zmax: 100,
     colorscale: colorscales[isDark() ? "dark" : "light"],
-    texttemplate: "%{z:.1f}",
     hovertemplate: "%{y} + %{x}: %{z:.1f}%<extra></extra>",
-    colorbar: { title: { text: "Wahrscheinlichkeit (%)" } },
   } as Plotly.Data;
 }
+function layout(t: SplitTable, container: HTMLElement): Partial<Plotly.Layout> {
+  const rows = t.index.length;
+  const cols = t.columns.length;
+  const labelW = 90; // space for the row names
+  const labelH = 40; // space for the column names
+  const cell = Math.min(52, (container.clientWidth - labelW) / cols);
 
-function layout(): Partial<Plotly.Layout> {
   return {
-    height: 600,
-    width: 800,
-    margin: { t: 20, l: 20, r: 20, b: 20 },
-    xaxis: { side: "top", automargin: true },
-    yaxis: { autorange: "reversed", automargin: true },
-    paper_bgcolor: "rgba(0,0,0,0)",   // let the page background show through
+    width: Math.round(cell * cols + labelW + 20),
+    height: Math.round(cell * rows + labelH + 20),
+    margin: { t: 10, l: 10, r: 10, b: 10 },
+    xaxis: { side: "top", automargin: true, ticks: "", constrain: "domain" },
+    yaxis: {
+      autorange: "reversed",
+      automargin: true,
+      ticks: "",
+      scaleanchor: "x",
+      scaleratio: 1,
+      constrain: "domain",
+    },
+    paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    font: { color: getComputedStyle(document.body).color },
+    font: {
+      family: getComputedStyle(document.body).fontFamily,
+      color: getComputedStyle(document.body).color,
+      size: 13,
+    },
   };
 }
 
@@ -49,6 +74,9 @@ async function main(): Promise<void> {
 
   const nightsEl = document.getElementById("nights-table");
   const nights: NightsTable | null = nightsEl ? await renderNights(nightsEl) : null;
+
+  const matchboxEl = document.getElementById("matchbox-table");
+  const matchboxes = matchboxEl ? await renderMatchBoxes(matchboxEl) : null;
 
   const season: Season = await (await fetch(probsPlot.dataset.src!)).json();
 
@@ -67,13 +95,18 @@ async function main(): Promise<void> {
   // draw plot table
   const draw = () => {
     sliderValue.textContent = slider.value;
-    Plotly.react(probsPlot, [probsPlot_Data(season.episodes[slider.value].probs)], layout(), { responsive: true, displayModeBar: false });
+    Plotly.react(probsPlot,
+      [probsPlot_Data(season.episodes[slider.value].probs)],
+      layout(season.episodes[slider.value].probs, probsPlot),
+      { responsive: true, displayModeBar: false });
     numSols.textContent = season.episodes[slider.value].num_sols.toLocaleString("de-DE");
     nights?.update(Number(slider.value));
+    matchboxes?.update(Number(slider.value));
   };
 
   // eventlistener for episode selection
   slider.addEventListener("input", draw);
+  window.addEventListener("resize", draw);
 
   // redraw on theme change
   new MutationObserver(draw).observe(document.documentElement, {
