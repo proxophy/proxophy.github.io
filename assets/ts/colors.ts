@@ -25,8 +25,12 @@ export function isDark(): boolean {
   return document.documentElement.dataset.theme === "dark";
 }
 
-/** Color of a 100% cell in the current theme. */
 export function topColor(): string {
   const scale = colorscales[isDark() ? "dark" : "light"];
   return scale[scale.length - 1][1];
+}
+
+// set match color
+export function syncThemeColors(): void {
+  document.documentElement.style.setProperty("--match", topColor());
 }

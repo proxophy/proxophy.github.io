@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
   --main-pink: #e8457f;
-  --light-pink: #f7a1c4;
+  --light-pink: #f7a1c4; /* currently unused */
 }
 
 /* Wider content column, but only on pages that contain the probs plot */
@@ -39,36 +39,142 @@
 }
 
 /* ============================================================
-   AYTO season page: controls and headings
+   AYTO season page: headings, controls, plot
    ============================================================ */
-.ayto-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0 1rem;
-  color: var(--primary);
-}
-
-.ayto-controls input[type="range"] {
-  flex: 1;
-  min-width: 180px;
-  accent-color: var(--secondary);
-}
-
-.ayto-controls select {
-  background: var(--entry);
-  color: var(--primary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.3rem 0.6rem;
-}
-
 .ayto-heading {
   font-size: 1.3rem;
   margin: 2rem 0 0.75rem;
 }
 
+.ayto-controls {
+  --thumb: 18px; /* shared by the slider thumb, the label and the ticks */
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.ayto-controls > label {
+  min-width: 6.5em; /* keeps the slider from jumping when "9" becomes "10" */
+  line-height: var(--thumb); /* centres the text on the track */
+  font-variant-numeric: tabular-nums;
+}
+
+.ayto-sols {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
 #probs-plot {
   overflow-x: auto; /* the plot has a fixed pixel width, so scroll on narrow screens */
+}
+
+/* ============================================================
+   Week slider
+   ============================================================ */
+.ayto-slider {
+  flex: 1;
+  min-width: 220px;
+  padding-inline: 2px;
+}
+
+.ayto-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--thumb);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* track (--p = filled share, set from ayto.ts) */
+.ayto-slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--main-pink) var(--p, 100%),
+    var(--border) var(--p, 100%)
+  );
+}
+.ayto-slider input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.ayto-slider input[type="range"]::-moz-range-progress {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--main-pink);
+}
+
+/* thumb */
+.ayto-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--thumb);
+  height: var(--thumb);
+  margin-top: -7px; /* centres the thumb on the 4px track */
+  border-radius: 50%;
+  background: var(--main-pink);
+  border: 3px solid var(--theme);
+  box-shadow: 0 0 0 1px var(--main-pink);
+}
+.ayto-slider input[type="range"]::-moz-range-thumb {
+  width: calc(var(--thumb) - 6px);
+  height: calc(var(--thumb) - 6px);
+  border-radius: 50%;
+  background: var(--main-pink);
+  border: 3px solid var(--theme);
+  box-shadow: 0 0 0 1px var(--main-pink);
+}
+
+/* ticks */
+.ayto-ticks {
+  position: relative;
+  height: 2.2rem;
+  margin-top: 2px;
+}
+
+.ayto-ticks .tick {
+  position: absolute;
+  top: 0;
+  /* same offset logic as the thumb, so ticks line up with the thumb centre */
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--f));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--secondary);
+  font: inherit;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ayto-ticks .mark {
+  width: 1px;
+  height: 6px;
+  background: var(--border);
+  opacity: 0.5;
+}
+
+/* hover must come before .active, otherwise it would override the active colour */
+.ayto-ticks .tick:hover {
+  color: var(--primary);
+}
+
+.ayto-ticks .tick.active {
+  color: var(--main-pink);
+  font-weight: 600;
+}
+.ayto-ticks .tick.active .mark {
+  height: 8px;
+  background: var(--main-pink);
+  opacity: 1;
 }

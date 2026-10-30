@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{- $base := printf "ayto/data/%s" .File.ContentBaseName -}}
 <article>
     <header class="page-header">
         <h1>{{ .Title }}</h1>
@@ -8,31 +9,36 @@
 
     <div class="ayto-controls">
         <label for="week-slider">Woche: <strong id="slider-value"></strong></label>
-        <input type="range" id="week-slider">
-        
-    </div>
-    <span>Lösungen: <strong id="num-sols"></strong></span>
+        <div class="ayto-slider">
+            <input type="range" id="week-slider">
+            <div class="ayto-ticks" id="week-ticks">
+            </div>
+        </div>
 
-    <h2  class="ayto-heading">Wahrscheinlichkeiten</h2>
+    </div>
+    <p class="ayto-sols">Lösungen: <strong id="num-sols"></strong></p>
+
+    <h2 class="ayto-heading">Wahrscheinlichkeiten</h2>
     <div id="probs-plot" data-src="{{ printf "ayto/probs/%s.json" .File.ContentBaseName | relURL }}"></div>
 
-    <h2  class="ayto-heading">Matching Nights</h2>
-    <div class="ayto-table" id="nights-table" 
-        data-src="{{ printf "ayto/data/%s_nights.csv" .File.ContentBaseName | relURL }}"
-        data-pairs="{{ printf "ayto/data/%s_solution.csv" .File.ContentBaseName | relURL }}"
-        ></div>
-    
-    <h2  class="ayto-heading">Match Boxes</h2>
-    <div class= "ayto-table" id="matchbox-table" data-src="{{ printf "ayto/data/%s_matchboxes.csv" .File.ContentBaseName | relURL }}"></div>
+
+    <h2 class="ayto-heading">Matching Nights</h2>
+    <div class="ayto-table-wrap" id="nights-table" 
+        data-src="{{ printf "%s/nights.csv" $base | relURL }}"
+        data-pairs="{{ printf "%s/solution.csv" $base | relURL }}"></div>
+
+    <h2 class="ayto-heading">Match Boxes</h2>
+    <div class="ayto-table-wrap" id="matchbox-table" 
+         data-src="{{ printf "%s/matchboxes.csv" $base| relURL }}"></div>
 
 
     {{ with resources.Get "ts/ayto.ts" }}
-    {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}
-    {{ with . | js.Build $opts | fingerprint }}
-    <script src="{{ .RelPermalink }}" defer></script>
-    {{ end }}
+        {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}
+            {{ with . | js.Build $opts | fingerprint }}
+        <script src="{{ .RelPermalink }}" defer></script>
+        {{ end }}
     {{ else }}
-    {{ errorf "assets/ts/ayto.ts not found" }}
+        {{ errorf "assets/ts/ayto.ts not found" }}
     {{ end }}
 </article>
 {{ end }}
