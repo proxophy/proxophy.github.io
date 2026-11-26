@@ -3,7 +3,7 @@
  "season": "normalo2020",
  "episodes": {
   "1": {
-   "input_hash": "8a57e5050dc72886",
+   "input_hash": "54a4df1c8307b2c5",
    "num_sols": 12014640,
    "probs": {
     "index": [
@@ -166,7 +166,7 @@
    }
   },
   "2": {
-   "input_hash": "4e8dd73332699545",
+   "input_hash": "fbd1a915b515dfbf",
    "num_sols": 2029330,
    "probs": {
     "index": [
@@ -329,7 +329,7 @@
    }
   },
   "3": {
-   "input_hash": "603abaf304e2b333",
+   "input_hash": "59565388f2e2b44d",
    "num_sols": 150138,
    "probs": {
     "index": [
@@ -492,7 +492,7 @@
    }
   },
   "4": {
-   "input_hash": "3e672a38b60d0efc",
+   "input_hash": "dbe36a03a5018dca",
    "num_sols": 13568,
    "probs": {
     "index": [
@@ -655,7 +655,7 @@
    }
   },
   "5": {
-   "input_hash": "6c834ec13f5a435c",
+   "input_hash": "bc5035e1e19f3281",
    "num_sols": 1152,
    "probs": {
     "index": [
@@ -818,7 +818,7 @@
    }
   },
   "6": {
-   "input_hash": "db9afac47a61036a",
+   "input_hash": "7a393fb62dc1896d",
    "num_sols": 75,
    "probs": {
     "index": [
@@ -981,7 +981,7 @@
    }
   },
   "7": {
-   "input_hash": "4011d66a4a703008",
+   "input_hash": "8676a1ff364f13e0",
    "num_sols": 15,
    "probs": {
     "index": [
@@ -1144,7 +1144,7 @@
    }
   },
   "8": {
-   "input_hash": "b0fc18dc0bfb87ec",
+   "input_hash": "761e69d4392a7226",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1307,7 +1307,7 @@
    }
   },
   "9": {
-   "input_hash": "8b58086344bec7ee",
+   "input_hash": "2e596caae2868251",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1470,7 +1470,7 @@
    }
   },
   "10": {
-   "input_hash": "40b6756ffbf73d9a",
+   "input_hash": "1e09cd7bd429b6bc",
    "num_sols": 1,
    "probs": {
     "index": [

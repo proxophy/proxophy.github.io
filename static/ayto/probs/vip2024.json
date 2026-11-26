@@ -3,7 +3,7 @@
  "season": "vip2024",
  "episodes": {
   "1": {
-   "input_hash": "4c2e63b916aefb28",
+   "input_hash": "d098a55a8bfd907e",
    "num_sols": 6081530,
    "probs": {
     "index": [
@@ -166,7 +166,7 @@
    }
   },
   "2": {
-   "input_hash": "6ac18903a7e266c8",
+   "input_hash": "a88b2e4d6553be00",
    "num_sols": 199733,
    "probs": {
     "index": [
@@ -329,7 +329,7 @@
    }
   },
   "3": {
-   "input_hash": "9b0db37e7ff57353",
+   "input_hash": "c0822f4c4b8c46b8",
    "num_sols": 39541,
    "probs": {
     "index": [
@@ -492,7 +492,7 @@
    }
   },
   "4": {
-   "input_hash": "dd5b7e384f89bbd8",
+   "input_hash": "04207d528a142e35",
    "num_sols": 5927,
    "probs": {
     "index": [
@@ -655,7 +655,7 @@
    }
   },
   "5": {
-   "input_hash": "c53455d7b854829a",
+   "input_hash": "c14a16abe44f8982",
    "num_sols": 99,
    "probs": {
     "index": [
@@ -818,7 +818,7 @@
    }
   },
   "6": {
-   "input_hash": "5a4c5b9beaf6f860",
+   "input_hash": "7c1948952f029d3f",
    "num_sols": 2,
    "probs": {
     "index": [
@@ -981,7 +981,7 @@
    }
   },
   "7": {
-   "input_hash": "0d642d2fbb8d89e0",
+   "input_hash": "0a06f4883c48567d",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1144,7 +1144,7 @@
    }
   },
   "8": {
-   "input_hash": "4075474791483078",
+   "input_hash": "111893af34b3653e",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1307,7 +1307,7 @@
    }
   },
   "9": {
-   "input_hash": "cd25d61cfb6fdb4b",
+   "input_hash": "6a2d2835c40f50f6",
    "num_sols": 1,
    "probs": {
     "index": [

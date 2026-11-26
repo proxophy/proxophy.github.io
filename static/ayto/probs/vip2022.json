@@ -3,7 +3,7 @@
  "season": "vip2022",
  "episodes": {
   "1": {
-   "input_hash": "967e2dbaa4b53373",
+   "input_hash": "b5d85144cd9914d2",
    "num_sols": 2051760,
    "probs": {
     "index": [
@@ -166,7 +166,7 @@
    }
   },
   "2": {
-   "input_hash": "9bda88588629e74d",
+   "input_hash": "a615219cc59bf822",
    "num_sols": 345950,
    "probs": {
     "index": [
@@ -329,7 +329,7 @@
    }
   },
   "3": {
-   "input_hash": "a4c7bd367b08038e",
+   "input_hash": "78caf1f2690cfb5c",
    "num_sols": 35860,
    "probs": {
     "index": [
@@ -492,7 +492,7 @@
    }
   },
   "4": {
-   "input_hash": "0c89ba59732dfe79",
+   "input_hash": "46e4851fcf13d22c",
    "num_sols": 2700,
    "probs": {
     "index": [
@@ -655,7 +655,7 @@
    }
   },
   "5": {
-   "input_hash": "54b802f229faec2b",
+   "input_hash": "40efa6d6ec7ad845",
    "num_sols": 806,
    "probs": {
     "index": [
@@ -818,7 +818,7 @@
    }
   },
   "6": {
-   "input_hash": "e0281878c1b0b47e",
+   "input_hash": "8aafea6d7666e5ed",
    "num_sols": 175,
    "probs": {
     "index": [
@@ -981,7 +981,7 @@
    }
   },
   "7": {
-   "input_hash": "f1bc93906648e0ab",
+   "input_hash": "472991a59a91d9d9",
    "num_sols": 116,
    "probs": {
     "index": [
@@ -1144,7 +1144,7 @@
    }
   },
   "8": {
-   "input_hash": "63b98ada40cb31f3",
+   "input_hash": "74623ef4b5c0b917",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1307,7 +1307,7 @@
    }
   },
   "9": {
-   "input_hash": "69d1e2fd112d2339",
+   "input_hash": "0325135712370289",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1470,7 +1470,7 @@
    }
   },
   "10": {
-   "input_hash": "a0bb5bffa2e23447",
+   "input_hash": "4d793b931526482c",
    "num_sols": 1,
    "probs": {
     "index": [
