@@ -3,7 +3,7 @@
  "season": "vip2026",
  "episodes": {
   "1": {
-   "input_hash": "9cfb17ce57a74167",
+   "input_hash": "721692853e979202",
    "num_sols": 92785428,
    "probs": {
     "index": [
@@ -180,7 +180,7 @@
    }
   },
   "2": {
-   "input_hash": "831800ffda4f9a9d",
+   "input_hash": "5024aabb36a36636",
    "num_sols": 8925705,
    "probs": {
     "index": [
@@ -357,7 +357,7 @@
    }
   },
   "3": {
-   "input_hash": "aef5d508c9feb45e",
+   "input_hash": "36d9f9a2a2da4fa6",
    "num_sols": 15111,
    "probs": {
     "index": [
@@ -534,7 +534,7 @@
    }
   },
   "4": {
-   "input_hash": "797c24dcbb71d306",
+   "input_hash": "e0ee737e792801b4",
    "num_sols": 225,
    "probs": {
     "index": [
@@ -711,7 +711,7 @@
    }
   },
   "5": {
-   "input_hash": "b01fd5d22e53904b",
+   "input_hash": "03aaffd294020d64",
    "num_sols": 50,
    "probs": {
     "index": [
@@ -888,7 +888,7 @@
    }
   },
   "6": {
-   "input_hash": "3aabb608770ce45c",
+   "input_hash": "5a65bdeb00a39d55",
    "num_sols": 11,
    "probs": {
     "index": [
@@ -1065,7 +1065,7 @@
    }
   },
   "7": {
-   "input_hash": "359e904166df2655",
+   "input_hash": "ec98a704d2ca67a2",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1242,7 +1242,7 @@
    }
   },
   "8": {
-   "input_hash": "a30816cc82a37d3d",
+   "input_hash": "e185a0f6c5f6ac24",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1419,7 +1419,7 @@
    }
   },
   "9": {
-   "input_hash": "49e7359b5c81986d",
+   "input_hash": "d04a3f2457cfc295",
    "num_sols": 1,
    "probs": {
     "index": [
@@ -1596,7 +1596,7 @@
    }
   },
   "10": {
-   "input_hash": "973a95d94f33c0bf",
+   "input_hash": "1b0092a6964e3c13",
    "num_sols": 1,
    "probs": {
     "index": [
