@@ -30,6 +30,9 @@
 .ayto-table tbody tr:hover {
   background: var(--border);
 }
+.ayto-table tbody tr:hover {
+  background: var(--border);
+}
 
 /* first column (night / week number) and last column (lights / result) */
 .ayto-table th:first-child,
@@ -51,13 +54,24 @@
 /* confirmed pair (a cell in the nights table, a whole row in the match boxes);
    --match is set from colors.ts and follows the light/dark theme */
 .ayto-table .pair {
-  background: color-mix(in srgb, var(--match, #1a237e) 30%, transparent);
+  background: color-mix(in srgb, var(--match) 30%, transparent);
   font-weight: 600;
 }
 
+.ayto-table .matchboxpair {
+  background: var(--match);
+  color: #fff;
+  font-weight: 600;
+}
 /* rows that belong to weeks after the one selected on the slider */
 .ayto-table tr.future {
   opacity: 0.35;
+}
+
+.ayto-table-wrap caption {
+    caption-side: bottom;
+    margin-top: 10px;
+    font-size: 0.85rem;
 }
 
 /* match box result symbols */

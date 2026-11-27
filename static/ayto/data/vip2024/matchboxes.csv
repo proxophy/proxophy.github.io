@@ -1,9 +1,11 @@
 episode,Mann,Frau,result,before_night
-0,Marc-Robin,Laura L.,False,True
-1,Chris,Emmy,True,True
-3,Marc-Robin,Asena,False,True
-5,Ozan,Anastasia,True,True
-6,Lukas,Jennifer,False,True
-7,Tim,Linda,True,True
-7,Tim,Dana,True,True
-8,Lars,Laura L.,False,True
+0,Marc-Robin,Laura L.,false,true
+1,Chris,Emmy,true,true
+2,Alex,Anastasia,sold,true
+3,Marc-Robin,Asena,false,true
+4,Nikola,Laura M.,sold,true
+5,Ozan,Anastasia,true,true
+6,Lukas,Jennifer,false,true
+7,Tim,Linda,true,true
+7,Tim,Dana,true,true
+8,Lars,Laura L.,false,true

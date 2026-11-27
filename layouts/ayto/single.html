@@ -2,7 +2,13 @@
 {{- $base := printf "ayto/data/%s" .File.ContentBaseName -}}
 <article>
     <header class="page-header">
-        <h1>{{ .Title }}</h1>
+        <h1>
+            {{ if eq .Params.custom_title_enabled true }}
+            {{ .Params.custom_title_value }}
+            {{ else }}
+            {{ .Title }}
+            {{ end }}
+        </h1>
     </header>
 
     {{.Content}}
@@ -23,22 +29,25 @@
 
 
     <h2 class="ayto-heading">Matching Nights</h2>
-    <div class="ayto-table-wrap" id="nights-table" 
-        data-src="{{ printf "%s/nights.csv" $base | relURL }}"
-        data-pairs="{{ printf "%s/solution.csv" $base | relURL }}"></div>
+    <div>
+        <div class="ayto-table-wrap" id="nights-table" data-src="{{ printf "%s/nights.csv" $base | relURL }}"
+            data-pairs="{{ printf "%s/solution.csv" $base | relURL }}", data-matchboxes="{{ printf "%s/matchboxes.csv"
+            $base | relURL }}">
 
-    <h2 class="ayto-heading">Match Boxes</h2>
-    <div class="ayto-table-wrap" id="matchbox-table" 
-         data-src="{{ printf "%s/matchboxes.csv" $base| relURL }}"></div>
+        </div>
+
+        <h2 class="ayto-heading">Match Boxes</h2>
+        <div class="ayto-table-wrap" id="matchbox-table" data-src="{{ printf "%s/matchboxes.csv" $base| relURL }}">
+        </div>
 
 
-    {{ with resources.Get "ts/ayto.ts" }}
+        {{ with resources.Get "ts/ayto.ts" }}
         {{ $opts := dict "minify" hugo.IsProduction "target" "es2020" }}
-            {{ with . | js.Build $opts | fingerprint }}
+        {{ with . | js.Build $opts | fingerprint }}
         <script src="{{ .RelPermalink }}" defer></script>
         {{ end }}
-    {{ else }}
+        {{ else }}
         {{ errorf "assets/ts/ayto.ts not found" }}
-    {{ end }}
+        {{ end }}
 </article>
 {{ end }}

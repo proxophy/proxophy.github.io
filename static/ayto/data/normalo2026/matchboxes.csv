@@ -1,9 +1,12 @@
 episode,Mann,Frau,result,before_night
-0,Evi,Tiziana,False,True
-2,Julian S,Linda,False,True
-3,Julian M,Marla,True,True
-3,Julian M,Alicia,False,True
-4,Chris,Aurora,False,True
-6,Noel,Tonia,True,True
-7,Ema,Michelle,False,True
-9,Jeronymo,Tiziana,True,True
+0,Evi,Tiziana,false,true
+1,Evi,Laura,sold,true
+2,Julian S,Linda,false,true
+3,Julian M,Marla,true,true
+3,Julian M,Alicia,false,true
+4,Chris,Aurora,false,true
+5,Jerry,Elena,sold,true
+6,Noel,Tonia,true,true
+7,Ema,Michelle,false,true
+8,Meji,Elena,sold,true
+9,Jeronymo,Tiziana,true,true

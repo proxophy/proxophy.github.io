@@ -2,7 +2,7 @@ import Papa from "papaparse";
 
 /** Fetch a CSV file and parse it. Throws if the request fails. */
 export async function loadCsv<T = string[]>(url: string, header = false): Promise<T[]> {
-  const res = await fetch(url);
+  const res = await fetch(url,  { cache: "no-cache" });
   if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
   const { data } = Papa.parse<T>((await res.text()).trim(), { header, skipEmptyLines: true });
   return data;
